@@ -63,3 +63,113 @@ graph TD
     E --> H[Buy/Sell/Hold Decision Engine]
     F --> H
     H --> I[Final Recommendation Output]
+```
+
+## 💻 Implementation
+
+### A) Data Collection
+
+Data was sourced from real-time APIs for both textual sentiment and market prices. Approximate ingestion rates include:
+- **Reddit**: ~36,000 posts/hr from subreddits like r/stocks.
+- **Twitter**: ~720 tweets/hr using cashtags ($TICKER).
+- **Finnhub News**: ~3,600 articles/hr.
+- **Stock Data**: Real-time and historical via yFinance and Alpha Vantage.
+
+The collected data includes key fields like text content, timestamp, price history, engagement metrics (likes/retweets/upvotes), and ticker references.
+
+### B) Algorithmic Implementation
+
+#### Sentiment Analysis:
+- Fine-tuned FinBERT on domain-specific datasets related to stock sentiment.
+- Improved classification accuracy from **84.00%** (original) to **89.19%** post fine-tuning.
+- Classified sentiment into **positive**, **negative**, and **neutral** categories.
+
+#### Price Forecasting:
+- Utilized LSTM networks trained on 5-year OHLC data.
+- Forecasted 3–5 day stock trends, showing direction and confidence range.
+- Achieved a forecasting accuracy of **87.4%**.
+
+#### Recommendation Engine:
+- If strong positive sentiment + forecast uptrend → **Buy**.
+- If strong negative sentiment + forecast downtrend → **Sell**.
+- If sentiment and forecast conflict or are neutral → **Hold**.
+- Budget is optimized to suggest new buys with available funds.
+
+## 📊 Results and Performance
+
+### 🔹 Sentiment Analysis Accuracy
+
+| Model               | Accuracy |
+|--------------------|----------|
+| Original FinBERT   | 84.00%   |
+| Fine-Tuned FinBERT | 89.19%   |
+
+### 🔹 Forecasting Accuracy
+
+| Model | Accuracy |
+|-------|----------|
+| LSTM  | 87.4%    |
+
+### 🔹 Key Outputs
+
+- ✅ Candlestick chart for stocks like AAPL, TSLA.
+- ✅ LSTM forecast vs actual for stock price movements.
+- ✅ Sentiment source breakdown: Reddit, Twitter, News.
+- ✅ Buy/Sell/Hold recommendations for each ticker.
+
+## ☁️ Cloud Deployment
+
+✅ Fully deployed on **Google Cloud Platform**, supporting:
+- Real-time API-based access for recommendations.
+- Cloud storage of user portfolios and model weights.
+- Future-ready dashboard integration using Streamlit or Flask.
+
+## 🔭 Future Work
+
+- 🔄 Integration with trading APIs like Robinhood, Alpaca.
+- 📈 Risk analysis (Sharpe Ratio, volatility).
+- 🖥️ Streamlit/Flask dashboards for GUI.
+- 🌍 Multilingual/International stock market support.
+- 🔔 Auto-alert system for news/tweet anomalies.
+- 🧠 Model ensembles for improved stability and performance.
+
+## ✅ Conclusion
+
+TradeWise demonstrates the capabilities of AI-driven systems in the realm of stock market analysis and portfolio management. By combining real-time sentiment insights and deep learning-based forecasting, the system empowers users to make timely and informed decisions. The fine-tuned models, robust architecture, and cloud infrastructure make it a practical and scalable solution. As it continues to evolve, TradeWise aims to become a go-to decision support tool for both novice and experienced investors seeking to optimize their portfolios intelligently.
+
+## 📚 References
+
+- [FinBERT](https://arxiv.org/abs/1908.10063)  
+- [Alpha Vantage](https://www.alphavantage.co/)  
+- [Yahoo Finance API](https://www.yahoofinanceapi.com/)  
+- [Twitter API](https://developer.twitter.com/en/docs)  
+- [Reddit PRAW](https://praw.readthedocs.io/)  
+- [Finnhub](https://finnhub.io/)  
+- [Scikit-learn](https://scikit-learn.org/)  
+- [PyTorch](https://pytorch.org/)  
+- [Keras](https://keras.io/)
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/Intelligent-Portfolio-Optimizer.git
+cd Intelligent-Portfolio-Optimizer
+pip install -r requirements.txt
+```
+
+### Add API keys in `.env` or `config.py`
+
+```env
+ALPHA_VANTAGE_KEY=your_key
+TWITTER_BEARER_TOKEN=your_token
+REDDIT_CLIENT_ID=your_id
+REDDIT_SECRET=your_secret
+FINNHUB_KEY=your_key
+```
+
+### Run the app
+
+```bash
+python main.py
+```
+
