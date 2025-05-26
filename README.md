@@ -48,7 +48,7 @@ The TradeWise system functions as a comprehensive pipeline consisting of several
 - **Sentiment Analysis Module**: Utilizes fine-tuned FinBERT to analyze Reddit, Twitter, and news headlines.
 - **Time Series Forecasting Module**: Implements LSTM models to forecast price trends for the next 3–5 days.
 - **Recommendation Engine**: Combines sentiment and forecasting outputs with user portfolio to suggest buy/sell/hold actions.
-- **Visualization Dashboard**: Presents candlestick plots, forecasted trends, sentiment histograms, and tabulated recommendations.
+- **Final Output**: Presents candlestick plots, forecasted trends, buy suggestions, and final portfolio recommendations.
 
 ## ⚙️ System Architecture
 
