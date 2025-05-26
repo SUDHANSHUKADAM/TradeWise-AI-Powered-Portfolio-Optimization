@@ -15,7 +15,6 @@ The dynamic and volatile nature of modern financial markets makes it increasingl
 - To employ deep learning models for accurate price forecasting.
 - To visualize data through interactive charts and intuitive outputs.
 
-Phase 1 of the project focuses on optimizing portfolios involving 100 companies using a combination of fine-tuned sentiment analysis and LSTM-based forecasting models.
 
 ## 🔧 Technologies and Tools
 
