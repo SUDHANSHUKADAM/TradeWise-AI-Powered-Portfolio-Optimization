@@ -111,10 +111,34 @@ The collected data includes key fields like text content, timestamp, price histo
 
 ### 🔹 Key Outputs
 
-- ✅ Candlestick chart for stocks like AAPL, TSLA.
-- ✅ LSTM forecast vs actual for stock price movements.
-- ✅ Sentiment source breakdown: Reddit, Twitter, News.
-- ✅ Buy/Sell/Hold recommendations for each ticker.
+- ✅ Candlestick chart for selected stocks.
+  
+  ![image](https://github.com/user-attachments/assets/ab15e91d-12fe-497c-bbff-4b31598f1121)
+
+- ✅ LSTM-based price forecast.
+  
+  ![image](https://github.com/user-attachments/assets/53ffe875-fcde-4eef-a601-785f00790040)
+
+### 🔹 Final Outputs Comparison
+
+#### 🔸 Original FinBERT Results:
+
+- The outputs below show how Original FinBERT classifies stock-related text with moderate accuracy but sometimes lacks specificity in recommendation.
+
+  ![image](https://github.com/user-attachments/assets/df155b36-2f90-4bcc-b42c-85be42a92dd4)
+  ![image](https://github.com/user-attachments/assets/44c657e7-b3c7-406d-9a25-085e2205a761)
+  ![image](https://github.com/user-attachments/assets/f6b298ad-2374-490a-9b54-4e74b26cc0a8)
+
+#### 🔸 Fine-Tuned FinBERT Results:
+
+- With fine-tuning, FinBERT performs more precise sentiment classification, generating sharper and more actionable buy/sell signals that better align with stock price trends.
+
+  ![image](https://github.com/user-attachments/assets/1370104c-d4b0-4801-a49f-12630b130b3e)
+  ![image](https://github.com/user-attachments/assets/298db56d-1031-4188-9c92-07e7e1086f3f)
+  ![image](https://github.com/user-attachments/assets/58d0fdd2-f4e6-4976-a86d-9aa50037835a)
+
+> 📌 The fine-tuned FinBERT model enhances the quality of sentiment-driven trading decisions, offering users more profitable and targeted buy recommendations.
+
 
 ## ☁️ Cloud Deployment
 
@@ -125,12 +149,10 @@ The collected data includes key fields like text content, timestamp, price histo
 
 ## 🔭 Future Work
 
-- 🔄 Integration with trading APIs like Robinhood, Alpaca.
-- 📈 Risk analysis (Sharpe Ratio, volatility).
 - 🖥️ Streamlit/Flask dashboards for GUI.
 - 🌍 Multilingual/International stock market support.
 - 🔔 Auto-alert system for news/tweet anomalies.
-- 🧠 Model ensembles for improved stability and performance.
+
 
 ## ✅ Conclusion
 
