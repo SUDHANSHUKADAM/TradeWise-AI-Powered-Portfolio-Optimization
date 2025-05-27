@@ -187,7 +187,12 @@ REDDIT_CLIENT_ID=your_id
 REDDIT_SECRET=your_secret
 FINNHUB_KEY=your_key
 ```
+## 💾 Download the Fine-Tuned FinBERT Model
+The fine-tuned FinBERT model required for sentiment analysis is hosted externally due to GitHub's file size limits.
 
+👉 [📥 Click here to download the model]([https://drive.google.com/your-link-here](https://drive.google.com/drive/folders/1KbtVc4K7gk47Hgd_wkT5OvqKpUFcmDfz?usp=sharing))
+
+After downloading, place the file in the root directory of the project (same folder as main.py).
 ### Run the app
 
 ```bash
